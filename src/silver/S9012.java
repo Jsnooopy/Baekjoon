@@ -29,6 +29,7 @@ public class S9012 {
                 b = false;
             }
 
+
             if (b) {
                 bw.write("YES\n");
             } else {
