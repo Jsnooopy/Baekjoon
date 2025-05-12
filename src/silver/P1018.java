@@ -14,6 +14,7 @@ public class P1018 {
         char[][] arr = new char[N][M];
         for(int i = 0; i < N; i++) {
             arr[i] = br.readLine().toCharArray();
+
         }
 
         int answer = Integer.MAX_VALUE;
