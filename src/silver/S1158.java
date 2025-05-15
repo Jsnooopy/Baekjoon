@@ -22,6 +22,7 @@ public class S1158 {
             queue.add(i);
         }
 
+
         sb.append("<");
 
         int cnt = 0;
