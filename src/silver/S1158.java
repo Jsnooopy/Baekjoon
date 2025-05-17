@@ -24,6 +24,7 @@ public class S1158 {
 
         sb.append("<");
 
+
         int cnt = 0;
 
         while (!queue.isEmpty()) {
