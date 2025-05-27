@@ -10,7 +10,6 @@ public class S2193 {
 
         int N = Integer.parseInt(br.readLine());
         long[] dp = new long[91];
-
         dp[1] = 1;
         dp[2] = 1;
 
