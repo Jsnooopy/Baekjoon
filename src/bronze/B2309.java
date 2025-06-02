@@ -16,7 +16,6 @@ public class B2309 {
             arr[i] = Integer.parseInt(br.readLine());
             sum += arr[i];
         }
-
         Arrays.sort(arr);
 
         int a = 0, b = 0;
