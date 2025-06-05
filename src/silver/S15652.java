@@ -31,6 +31,7 @@ public class S15652 {
             return;
         }
 
+
         for (int i = at; i <= N; i++) {
             arr[depth] = i;
             dfs(i, depth + 1);
