@@ -26,7 +26,6 @@ public class S10974 {
         System.out.println(sb);
     }
 
-
     public static void dfs(int depth) {
         if (depth == N) {
             for (int val : print) {
