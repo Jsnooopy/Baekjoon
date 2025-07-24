@@ -17,6 +17,7 @@ public class G10986 {
         long[] S = new long[N];
         long[] C = new long[M];
 
+
         st = new StringTokenizer(br.readLine());
         for (int i = 0; i < N; i++) {
             arr[i] = Integer.parseInt(st.nextToken());
