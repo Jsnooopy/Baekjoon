@@ -14,11 +14,9 @@ public class G17298 {
         Stack<Integer> stack = new Stack<>();
 
         int N = Integer.parseInt(br.readLine());
-
         int[] A = new int[N];
 
         String[] split = br.readLine().split(" ");
-
         for (int i = 0; i < N; i++) {
             A[i] = Integer.parseInt(split[i]);
         }
