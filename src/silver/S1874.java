@@ -30,6 +30,7 @@ public class S1874 {
             sb.append('-').append('\n');
             N--;
         }
+
         System.out.println(sb);
     }
 }
