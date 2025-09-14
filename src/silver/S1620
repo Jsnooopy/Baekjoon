@@ -1,0 +1,50 @@
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Scanner;
+import java.util.Set;
+
+public class Main {
+	
+	public static void main(String[] args) {
+		
+		StringBuilder sb = new StringBuilder();
+		Scanner       sc = new Scanner(System.in);
+		
+		int N = sc.nextInt();
+		int M = sc.nextInt();
+		sc.nextLine(); // 개행 문자 처리
+		
+		Map<Integer, String> map1 = new HashMap<>();
+		Map<String, Integer> map2 = new HashMap<>();
+		
+		for (int i = 0; i < N; i++) {
+			String temp = sc.nextLine();
+			map1.put(i + 1, temp);
+			map2.put(temp, i + 1);
+		}
+		
+		for (int i = 0; i < M; i++) {
+			String temp = sc.nextLine();
+			
+			try {
+				sb
+					.append(map1.get(Integer.parseInt(temp)))
+					.append(System.lineSeparator());
+			}
+			catch (NumberFormatException e) {
+				sb
+					.append(map2.get(temp))
+					.append(System.lineSeparator());
+			}
+		}
+		
+		System.out.println(sb.toString());
+		
+		sc.close();
+	}
+}
