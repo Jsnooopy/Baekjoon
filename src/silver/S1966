@@ -1,0 +1,86 @@
+import java.util.*;
+import java.io.*;
+import java.math.*;
+
+class S1966 {
+	public static void main(String args[]) throws Exception {
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st;
+		
+		int T = Integer.parseInt(br.readLine());
+		
+		for(int test_case = 0; test_case < T; test_case++) {
+			st = new StringTokenizer(br.readLine());
+			
+			int N = Integer.parseInt(st.nextToken());
+			int idx = Integer.parseInt(st.nextToken());
+			 
+			int cnt = 0;
+			
+			ArrayList<node> arr = new ArrayList<>();
+			
+			st = new StringTokenizer(br.readLine());
+			for(int i = 0; i < N; i++) {
+				arr.add(new node(i, Integer.parseInt(st.nextToken())));
+			}
+			
+			if(N == 1) {
+				System.out.println("1");
+				continue;
+			}
+			
+            
+            // 내가 원하는 위치의 문서가 출력할 때까지 반복
+			while(true) {
+				boolean print = true;
+                //ArrayList의 0번 째 index는 현재 출력하려는 문서로 볼 수 있다.
+				for(int i=1; i<arr.size(); i++) {
+                
+                	// 현재 출력하려는 문서와 비교하며 큰 값이 있을 경우
+                    // 삭제하고 뒤로 보낸다
+					if(arr.get(0).mvp < arr.get(i).mvp) {
+						int tmpIdx = arr.get(0).idx;
+						int tmpMvp = arr.get(0).mvp;
+						
+						arr.remove(0);
+						arr.add(new node(tmpIdx, tmpMvp));
+						
+                        // 더 큰 중요도가 있음으로 출력하면 안된다. false
+						print = false;
+						break;
+					}
+				}
+				
+                // 출력할 수 있을 경우
+                // 즉, 현재 출력하려는 문서의 중요도가 가장 큰 경우
+				if(print) {
+                  	// 출력을 했기 때문에 +1을 해줘야 함.
+					if(arr.get(0).idx == idx) {
+						System.out.println(cnt+1);
+						break;
+					}
+                    // 출력하려는 문서가 내가 원하는 문서가 아닐 경우 삭제(출력)하고 
+                    // 출력했으니 ++
+					else {
+						arr.remove(0);
+						cnt++;
+					}
+				}
+			}
+			arr.clear();
+			
+		}
+	}
+}
+
+
+class node{
+	int idx;
+	int mvp;
+	
+	public node(int idx, int mvp) {
+		this.idx = idx;
+		this.mvp = mvp;
+	}
+}
