@@ -36,7 +36,7 @@ class Solution {
             }else{
                 answer++;
                 
-                if(now.idx == location) return answer;
+                if(now.idx == location) break;
             }
         }
         
